@@ -1,7 +1,7 @@
 <?php if(!defined('APPLICATION')) exit();
 /**
  * YoukuTudou - A plugin for Garden & Vanilla Forums.
- * Copyright (C) 2013  Livid Tech
+ * Copyright (C) 2013  Shadowdare
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,8 +24,8 @@ $PluginInfo['YoukuTudou'] = array(
    'Name' => 'Youku & Tudou Embed',
    'Description' => '允许在主题、回复和动态中嵌入优酷网和土豆网的视频。 Embed Youku and Tudou videos in posts.',
    'Version' => '1.2',
-   'Author' => "Livid Tech",
-   'AuthorUrl' => 'http://lividtech.com/',
+   'Author' => "Shadowdare",
+   'AuthorUrl' => 'http://vanillaforums.org/profile/addons/16014/Shadowdare',
    'License' => 'GPLv3',
    'SettingsUrl' => 'dashboard/settings/youkutudou',
    'MobileFriendly' => TRUE

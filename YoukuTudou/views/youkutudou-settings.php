@@ -1,7 +1,7 @@
 <?php if(!defined('APPLICATION')) exit();
 /**
  * YoukuTudou - A plugin for Garden & Vanilla Forums.
- * Copyright (C) 2013  Livid Tech
+ * Copyright (C) 2013  Shadowdare
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,7 +19,7 @@
 ?>
 <h1><?php echo $this->Data('Title'); ?></h1>
 <div class="Info">
-   <?php echo T('YoukuTudou.Settings.Chinese.Welcome', '欢迎使用'); ?><a href="http://lividtech.com/" target="_blank">Livid Tech</a> (Shadowdare)<?php echo T('YoukuTudou.Settings.Chinese.Welcome2', '的优酷&土豆视频嵌入插件！'); ?>
+   <?php echo T('YoukuTudou.Settings.Chinese.Welcome', '欢迎使用'); ?><a href="http://vanillaforums.org/profile/addons/16014/Shadowdare" target="_blank">Shadowdare</a><?php echo T('YoukuTudou.Settings.Chinese.Welcome2', '的优酷&土豆视频嵌入插件！'); ?>
    
    <br /><br /><?php echo T('YoukuTudou.Settings.Chinese.Info2', '只要发布优酷视频和土豆视频的链接，视频就会自动载入到网页中。'); ?>
    
@@ -39,7 +39,7 @@
 
 <h3><?php echo T('YoukuTudou.Settings.English', 'English Instructions'); ?></h3>
 <div class="Info">
-   <?php echo T('YoukuTudou.Settings.Welcome', 'Welcome to the Youku & Tudou Embed plugin by'); ?> <a href="http://lividtech.com/" target="_blank">Livid Tech</a> (Shadowdare)!
+   <?php echo T('YoukuTudou.Settings.Welcome', 'Welcome to the Youku & Tudou Embed plugin by'); ?> <a href="http://vanillaforums.org/profile/addons/16014/Shadowdare" target="_blank">Shadowdare</a>!
    
    <br /><br /><?php echo T('YoukuTudou.Settings.Info', 'Post links to Youku and Touku videos, and they will be turned into video embeds by JavaScript.'); ?>
    
