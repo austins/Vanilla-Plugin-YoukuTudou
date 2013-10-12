@@ -23,7 +23,7 @@
 $PluginInfo['YoukuTudou'] = array(
    'Name' => 'Youku & Tudou Embed',
    'Description' => '允许在主题、回复和动态中嵌入优酷网和土豆网的视频。 Embed Youku and Tudou videos in posts.',
-   'Version' => '1.2',
+   'Version' => '1.3',
    'Author' => "Shadowdare",
    'AuthorUrl' => 'http://vanillaforums.org/profile/addons/16014/Shadowdare',
    'License' => 'GPLv3',
