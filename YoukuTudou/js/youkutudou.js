@@ -27,6 +27,9 @@ jQuery(document).ready(function($) {
    var TudouRegex3 = '/albumplay/(.*)/';
    var TudouRegex4 = '/view/(.*)/';
    
+   var AcFunLink = 'acfun.tv/v/';
+   var AcFunRegex1 = '/ac(.*)';
+   
    // Interval for timer in milliseconds.
    // This is important for the binds.
    // It is used on document load because it gives the page time to load up.
@@ -63,19 +66,34 @@ jQuery(document).ready(function($) {
       }, EmbedInterval);
    }
    
-   // Responsive video frames. Adjusts height to aspect ratio accordingly.
+   // AcFun Embed
+   // Replace link to video with embed.
+   function AcFunEmbed() {
+      setInterval(function() {
+         $('.Message, .Excerpt, #PageBody').find('a[href*="' + AcFunLink + '"]').each(function() {
+            var AcFunVideoLink = $(this).attr('href');
+            var AcFunVideoID = AcFunVideoLink.match(AcFunRegex1);
+            if(AcFunVideoID != null)
+               $(this).replaceWith('<div class="AcFunVideoWrap"><iframe class="AcFunVideoEmbed" width="640" height="397" src="http://static.acfun.tv/player/ACFlashPlayer.out.swf?type=page&url=' + AcFunVideoLink + '" allowfullscreen></iframe></div>');
+         });
+      }, EmbedInterval);
+   }
+   
+   // Responsive video frames.
+   // Adjusts height to aspect ratio accordingly.
    // Aspect ratio scales:
    // 16:9 => 9 / 16
    // 4:3 => 3 / 4
    var AspectRatio = (9 / 16);
-   
-   // Additional height to adjust for button bars in the video embed.
+   // Additional height variables to adjust for button bars in the video embed.
    var YoukuAddHeight = 40;
    var TudouAddHeight = 8;
+   var AcFunAddHeight = 37;
    
+   // Set interval to give page time to load up the video embed, so that
+   // things like the preview and bind events get scaled by aspect ratio
+   // for the responsive video frames.
    function setAspectRatio() {
-      // Set interval to give page time to load up the video embed, so that
-      // things like the preview and bind events get scaled by aspect ratio.
       setInterval(function() {
          $('.YoukuVideoEmbed').each(function() {
             $(this).css('height', $(this).width() * AspectRatio + YoukuAddHeight);
@@ -84,20 +102,28 @@ jQuery(document).ready(function($) {
          $('.TudouVideoEmbed').each(function() {
             $(this).css('height', $(this).width() * AspectRatio + TudouAddHeight);
          });
+         
+         $('.AcFunVideoEmbed').each(function() {
+            $(this).css('height', $(this).width() * AspectRatio + AcFunAddHeight);
+         });
       }, EmbedInterval);
    }
    
    // Run functions on document load.
    YoukuEmbed();
    TudouEmbed();
+   AcFunEmbed();
    
    setAspectRatio();
+   
+   // Bind the setAspectRatio function to the resize event of the window.
    $(window).resize(setAspectRatio);
    
    // Bind functions to AJAX form submits for comments, activties, and previews.
    $(document).livequery('CommentEditingComplete CommentAdded PreviewLoaded', function() {
       YoukuEmbed();
       TudouEmbed();
+      AcFunEmbed();
       setAspectRatio();
    });
    
@@ -105,6 +131,7 @@ jQuery(document).ready(function($) {
    $('body.Vanilla.Post #Form_Preview, input#Form_Share').click(function() {
       YoukuEmbed();
       TudouEmbed();
+      AcFunEmbed();
       setAspectRatio();
    });
 });
