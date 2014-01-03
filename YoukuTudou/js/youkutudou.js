@@ -74,7 +74,7 @@ jQuery(document).ready(function($) {
             var AcFunVideoLink = $(this).attr('href');
             var AcFunVideoID = AcFunVideoLink.match(AcFunRegex1);
             if(AcFunVideoID != null)
-               $(this).replaceWith('<div class="AcFunVideoWrap"><iframe class="AcFunVideoEmbed" width="640" height="397" src="http://static.acfun.tv/player/ACFlashPlayer.out.swf?type=page&url=' + AcFunVideoLink + '" allowfullscreen></iframe></div>');
+               $(this).replaceWith('<div class="AcFunVideoWrap"><object class="AcFunVideoEmbed" width="640" height="397" type="application/x-shockwave-flash" data="http://static.acfun.tv/player/ACFlashPlayer.out.swf?type=page&url=' + AcFunVideoLink + '"><param name="wmode" value="window"><param name="allowFullscreenInteractive" value="true"><param name="allowfullscreen" value="true"><param name="allowscriptaccess" value="false"></object></div>');
          });
       }, EmbedInterval);
    }
@@ -109,29 +109,28 @@ jQuery(document).ready(function($) {
       }, EmbedInterval);
    }
    
-   // Run functions on document load.
-   YoukuEmbed();
-   TudouEmbed();
-   AcFunEmbed();
+   // Function to run all embed functions.
+   function LoadAllEmbeds() {
+	   YoukuEmbed();
+	   TudouEmbed();
+	   AcFunEmbed();
+	   
+	   setAspectRatio();
+   }
    
-   setAspectRatio();
+   // Run functions on document load.
+   LoadAllEmbeds();
    
    // Bind the setAspectRatio function to the resize event of the window.
    $(window).resize(setAspectRatio);
    
    // Bind functions to AJAX form submits for comments, activties, and previews.
    $(document).livequery('CommentEditingComplete CommentAdded PreviewLoaded', function() {
-      YoukuEmbed();
-      TudouEmbed();
-      AcFunEmbed();
-      setAspectRatio();
+      LoadAllEmbeds();
    });
    
    // Bind to click event of these buttons.
    $('body.Vanilla.Post #Form_Preview, input#Form_Share').click(function() {
-      YoukuEmbed();
-      TudouEmbed();
-      AcFunEmbed();
-      setAspectRatio();
+      LoadAllEmbeds();
    });
 });
