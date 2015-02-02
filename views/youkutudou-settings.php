@@ -1,22 +1,4 @@
-<?php if(!defined('APPLICATION')) exit();
-/**
- * YoukuTudou - A plugin for Garden & Vanilla Forums.
- * Copyright (C) 2013  Shadowdare
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
-?>
+<?php if(!defined('APPLICATION')) exit(); ?>
 <h1><?php echo $this->Data('Title'); ?></h1>
 <div class="Info">
    <?php echo T('YoukuTudou.Settings.Chinese.Welcome', '欢迎使用<a href="http://vanillaforums.org/profile/addons/16014/Shadowdare" target="_blank">Shadowdare</a>的优酷&土豆视频嵌入插件！'); ?>
