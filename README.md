@@ -2,7 +2,7 @@
 
 Youku & Tudou Embed is a plugin for Vanilla Forums that lets you post links to Youku, Tudou, and AcFun videos in discussions, comments, activity posts, and on pages created with the [Basic Pages](https://github.com/shadowdare/Vanilla-App-BasicPages) application, and they will be turned into video embeds by JavaScript.
 
-This application is released under the GNU GPL2 license.
+This plugin is released under the GNU GPL2 license.
 
 ## Installation
 
