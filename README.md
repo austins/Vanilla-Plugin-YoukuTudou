@@ -6,7 +6,7 @@ This application is released under the GNU GPL2 license.
 
 ## Installation
 
-There are two ways to download this application:
+There are two ways to download this plugin:
 
 1. **[Download the latest stable release](http://vanillaforums.org/get/youkutudou-plugin).**
 2. Clone the repository into the `plugins` directory of Vanilla and be sure to double check that new directory is named `YoukuTudou`.
