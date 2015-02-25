@@ -11,7 +11,7 @@ There are two ways to download this plugin:
 1. **[Download the latest stable release](http://vanillaforums.org/get/youkutudou-plugin).**
 2. Clone the repository into the `plugins` directory of Vanilla and be sure to double check that new directory is named `YoukuTudou`.
 
-Once you have added the application to your Vanilla installation, you need to activate it in the admin dashboard, and then you may post links to videos in the following format:
+Once you have added the plugin to your Vanilla installation, you need to activate it in the admin dashboard, and then you may post links to videos in the following format:
 
 ```
 http://v.youku.com/v_show/id_abc12345.html
