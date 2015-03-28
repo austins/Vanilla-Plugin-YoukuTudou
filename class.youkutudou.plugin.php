@@ -112,10 +112,9 @@ class YoukuTudouPlugin extends Gdn_Plugin {
     }
    
    /*
-    * SettingsController_YoukuTudou_Create()
     * Create the settings page for this plugin.
     * 
-    * @param object $Sender; Passed on from event.
+    * @param SettingsController $Sender
     */
    public function SettingsController_YoukuTudou_Create($Sender) {
       $Sender->Permission('Garden.Settings.Manage');
