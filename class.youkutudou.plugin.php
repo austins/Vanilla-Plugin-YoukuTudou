@@ -1,4 +1,4 @@
-<?php if(!defined('APPLICATION')) exit();
+<?php defined('APPLICATION') or exit();
 /**
  * Copyright (C) 2013  Shadowdare
  *
@@ -16,13 +16,11 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/**
- * An associative array of information about this plugin.
- */
+// An associative array of information about this plugin.
 $PluginInfo['YoukuTudou'] = array(
    'Name' => 'Youku & Tudou Embed',
    'Description' => '允许在主题、回复和动态中嵌入优酷网、土豆网和AcFun的视频。 Embed Youku, Tudou, and AcFun videos in posts.',
-   'Version' => '1.4.3',
+   'Version' => '1.4.4',
    'Author' => "Shadowdare",
    'AuthorUrl' => 'http://vanillaforums.org/profile/addons/16014/Shadowdare',
    'License' => 'GNU GPL2',
@@ -32,69 +30,86 @@ $PluginInfo['YoukuTudou'] = array(
 
 class YoukuTudouPlugin extends Gdn_Plugin {
    /*
-    * YoukuTudouIncludes()
     * Include the CSS and JS files.
     * 
-    * @param object $Sender; Passed on from events.
-    * @return TRUE;
+    * @param Gdn_Controller $Sender
     */
-   private function YoukuTudouIncludes($Sender) {
+   private function IncludeAssets($Sender) {
       $Sender->AddCssFile('youkutudou.css', 'plugins/YoukuTudou');
       $Sender->AddJsFile('youkutudou.js', 'plugins/YoukuTudou');
-      
-      return TRUE;
    }
-   
-   /*
-    * DiscussionController_Render_Before()
-    * Include assets in DiscussionController.
-    * 
-    * @param object $Sender; Passed on from event.
-    */
-   public function DiscussionController_Render_Before($Sender) {
-      $this->YoukuTudouIncludes($Sender);
-   }
-   
-   /*
-    * PostController_Render_Before()
-    * Include assets in ProfileController.
-    * 
-    * @param object $Sender; Passed on from event.
-    */
-   public function PostController_Render_Before($Sender) {
-      $this->YoukuTudouIncludes($Sender);
-   }
-   
-   /*
-    * ActivityController_Render_Before()
-    * Include assets in ActivityController.
-    * 
-    * @param object $Sender; Passed on from event.
-    */
-   public function ActivityController_Render_Before($Sender) {
-      $this->YoukuTudouIncludes($Sender);
-   }
-   
-   /*
-    * ProfileController_Render_Before()
-    * Include assets in ProfileController.
-    * 
-    * @param object $Sender; Passed on from event.
-    */
-   public function ProfileController_Render_Before($Sender) {
-      $this->YoukuTudouIncludes($Sender);
-   }
-   
-   /*
-    * PageController_Render_Before()
-    * Include assets in PageController.
-    * Support for Basic Pages application.
-    * 
-    * @param object $Sender; Passed on from event.
-    */
-   public function PageController_Render_Before($Sender) {
-      $this->YoukuTudouIncludes($Sender);
-   }
+
+    /**
+     * Include assets in the Vanilla app's DiscussionController.
+     *
+     * @param DiscussionController $Sender
+     */
+    public function DiscussionController_Render_Before($Sender) {
+        $this->IncludeAssets($Sender);
+    }
+
+    /**
+     * Include assets in the Vanilla app's PostController.
+     *
+     * @param PostController $Sender
+     */
+    public function PostController_Render_Before($Sender) {
+        $this->IncludeAssets($Sender);
+    }
+
+    /**
+     * Include assets in the Dashboard app's ActivityController.
+     *
+     * @param ActivityController $Sender
+     */
+    public function ActivityController_Render_Before($Sender) {
+        $this->IncludeAssets($Sender);
+    }
+
+    /**
+     * Include assets in the Dashboard app's ProfileController.
+     *
+     * @param ProfileController $Sender
+     */
+    public function ProfileController_Render_Before($Sender) {
+        $this->IncludeAssets($Sender);
+    }
+
+    /**
+     * Include assets in the Basic Pages app's PageController.
+     *
+     * @param PageController $Sender
+     */
+    public function PageController_Render_Before($Sender) {
+        $this->IncludeAssets($Sender);
+    }
+
+    /**
+     * Include assets in the Articles app's ArticlesController.
+     *
+     * @param ArticlesController $Sender
+     */
+    public function ArticlesController_Render_Before($Sender) {
+        $this->IncludeAssets($Sender);
+    }
+
+    /**
+     * Include assets in the Articles app's ArticleController.
+     *
+     * @param ArticleController $Sender
+     */
+    public function ArticleController_Render_Before($Sender) {
+        $this->IncludeAssets($Sender);
+    }
+
+    /**
+     * Include assets in the Articles app's ComposeController.
+     *
+     * @param ComposeController $Sender
+     */
+    public function ComposeController_Render_Before($Sender) {
+        $this->IncludeAssets($Sender);
+    }
    
    /*
     * SettingsController_YoukuTudou_Create()
