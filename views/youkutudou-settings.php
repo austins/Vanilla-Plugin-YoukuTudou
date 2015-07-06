@@ -1,7 +1,7 @@
 <?php if(!defined('APPLICATION')) exit(); ?>
 <h1><?php echo $this->Data('Title'); ?></h1>
 <div class="Info">
-   <?php echo T('YoukuTudou.Settings.Chinese.Welcome', '欢迎使用<a href="http://vanillaforums.org/profile/addons/16014/Shadowdare" target="_blank">Shadowdare</a>的优酷&土豆视频嵌入插件！'); ?>
+   <?php echo T('YoukuTudou.Settings.Chinese.Welcome', '欢迎使用<a href="https://github.com/austins" target="_blank">Austin S.</a>的优酷&土豆视频嵌入插件！'); ?>
    
    <br /><br /><?php echo T('YoukuTudou.Settings.Chinese.Info', '通过这个插件，你可以直接在主题、回复、动态和通过我的插件<a href="http://vanillaforums.org/addon/basicpages-application" target="_blank">Basic Pages</a>建立的页面中发布优酷网、土豆网和AcFun的视频链接地址。链接地址将会通过JavaScript自动被转化为视频嵌入网页当中。'); ?>
    
@@ -23,7 +23,7 @@
 
 <h3><?php echo T('YoukuTudou.Settings.English', 'English Instructions'); ?></h3>
 <div class="Info">
-   <?php echo T('YoukuTudou.Settings.Welcome', 'Welcome to the Youku & Tudou Embed plugin by'); ?> <a href="http://vanillaforums.org/profile/addons/16014/Shadowdare" target="_blank">Shadowdare</a>!
+   <?php echo T('YoukuTudou.Settings.Welcome', 'Welcome to the Youku & Tudou Embed plugin by'); ?> <a href="https://github.com/austins" target="_blank">Austin S.</a>!
    
    <br /><br /><?php echo T('YoukuTudou.Settings.Info', 'With this plugin, you can post links to Youku, Tudou, and AcFun videos in discussions, comments, activity posts, and on pages created with the <a href="http://vanillaforums.org/addon/basicpages-application" target="_blank">Basic Pages</a> application, and they will be turned into video embeds by JavaScript.'); ?>
    

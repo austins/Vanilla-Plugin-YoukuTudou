@@ -1,6 +1,6 @@
 <?php defined('APPLICATION') or exit();
 /**
- * Copyright (C) 2013  Shadowdare
+ * Copyright (C) 2013  Austin S.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -20,9 +20,9 @@
 $PluginInfo['YoukuTudou'] = array(
    'Name' => 'Youku & Tudou Embed',
    'Description' => '允许在主题、回复和动态中嵌入优酷网、土豆网和AcFun的视频。 Embed Youku, Tudou, and AcFun videos in posts.',
-   'Version' => '1.4.4',
-   'Author' => "Shadowdare",
-   'AuthorUrl' => 'http://vanillaforums.org/profile/addons/16014/Shadowdare',
+   'Version' => '1.4.5',
+   'Author' => "Austin S.",
+   'AuthorUrl' => 'https://github.com/austins',
    'License' => 'GNU GPL2',
    'SettingsUrl' => 'dashboard/settings/youkutudou',
    'MobileFriendly' => TRUE
