@@ -1,5 +1,6 @@
 .YoukuVideoEmbed,
 .TudouVideoEmbed,
-.AcFunVideoEmbed {
+.AcFunVideoEmbed,
+.BilibiliVideoEmbed {
     max-width: 100%;
 }

@@ -67,6 +67,21 @@ jQuery(document).ready(function ($) {
         }, EmbedInterval);
     }
 
+    // Bilibili Embed
+    // Replace link to video with embed.
+    var BilibiliLink = 'bilibili.com/video/';
+    var BilibiliRegex1 = '/av(.*)';
+
+    function BilibiliEmbed() {
+        setInterval(function () {
+            $('.Message, .Excerpt, #PageBody').find('a[href*="' + BilibiliLink + '"]').each(function () {
+                var BilibiliVideoID = $(this).attr('href').match(BilibiliRegex1);
+                if (BilibiliVideoID != null)
+                    $(this).replaceWith('<div class="BilibiliVideoWrap"><iframe class="BilibiliVideoEmbed" width="640" height="500" src="https://player.bilibili.com/player.html?aid=' + BilibiliVideoID[1] + '&page=1" allowfullscreen></iframe></div>');
+            });
+        }, EmbedInterval);
+    }
+
     // Responsive video frames.
     // Adjusts height to aspect ratio accordingly.
     // Aspect ratio scales:
@@ -77,6 +92,7 @@ jQuery(document).ready(function ($) {
     var YoukuAddHeight = 40;
     var TudouAddHeight = 8;
     var AcFunAddHeight = 37;
+    var BilibiliAddHeight = 5;
 
     // Set interval to give page time to load up the video embed, so that
     // things like the preview and bind events get scaled by aspect ratio
@@ -94,6 +110,10 @@ jQuery(document).ready(function ($) {
             $('.AcFunVideoEmbed').each(function () {
                 $(this).css('height', $(this).width() * AspectRatio + AcFunAddHeight);
             });
+
+            $('.BilibiliVideoEmbed').each(function () {
+                $(this).css('height', $(this).width() * AspectRatio + BilibiliAddHeight);
+            });
         }, EmbedInterval);
     }
 
@@ -102,6 +122,7 @@ jQuery(document).ready(function ($) {
         YoukuEmbed();
         TudouEmbed();
         AcFunEmbed();
+        BilibiliEmbed();
 
         setAspectRatio();
     }
